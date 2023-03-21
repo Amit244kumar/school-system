@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+#student-details-container{
+   position: fixed;
+
+   left: 365px;
+   bottom: -3px;
+   width: 72%;
+   height: 14.6cm;
+   border-top-left-radius: 18px;
+   border-top-right-radius: 18px;
+   overflow-y: scroll;
+   scroll-behavior: smooth;
+   padding: 30px;
+   background-image: url("https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?w=2000"); 
+}
+#student-details-container .fjg45-fg{
+   
+   display: flex;
+   width: 1000px;
+   background-color: #ffffff8f;
+   margin: 26px;
+   padding: 10px;
+   border-radius: 10px;
+}
+#student-details-container .header{
+   color: #03a9f4;
+   font-size: xx-large;
+   height: min-content;
+   position: relative;
+   left: 61px;
+   top: 18px;
+}
+#student-details-container .header span{
+   font-size: xx-large;
+}
+#student-details-container .header p{
+   position:relative;
+   left:130px; 
+}
+#student-details-container .fsf-2dfg{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+#student-details-container .input-boxs{
+   position: relative;
+   top: 60px;
+   right: 144px;
+   height: 500px; 
+}
+#student-details-container .input-boxs #mother-name,#phone-no,#DOB,#gender{
+   position: relative;
+   left: 394px;
+   bottom: 390px;
+}
+#dsf34df-4fv{
+   position: relative;
+   top: 80px;
+   font-size: larger;
+   background-color: #e5ff3bc2;
+   text-align: center;
+}
+#student-details-container .input-boxs #stream,#section,#address{
+   position: relative;
+   left: 394px;
+   bottom: 288px;
+}
+
+#student-details-container .input-boxs #address{
+   position: relative;
+   left: 394px;
+   bottom: 196px;
+}
+
+#student-details-container .input-boxs input,select{
+   border-radius: 10px;
+   width: 230px;
+   height: 26px;
+   font-size: 18px;
+   padding-left: 10px;
+}
+
+#student-details-container #button{
+   top: 9px;
+   position: relative;
+   left: 100px;
+   width: 438px;
+}
+#student-details-container #button button{
+   width: 165px;
+   height: 33px;
+   font-size: 25px;
+   background-color: #03dcf49e;
+   border: solid 1px grey;
+   cursor: pointer;
+   box-shadow: 1px 5px 4px grey;
+   transition: 0.5s;
+}
+#student-details-container #button button:hover{
+   background-color: #03dcf4;
+   box-shadow: none;
+}
+
+#student-details-container #button #error{
+   color:red;
+   font-size:large;
+}

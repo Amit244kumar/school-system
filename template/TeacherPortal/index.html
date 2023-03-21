@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/index.css'%}">
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+    <script src="{% static 'TeacherPortal/js/user_authentication.js' %}"></script>
+    <title>SKV school login</title>
+</head>
+<body>
+    {% include "TeacherPortal/login.html" %}
+    {% include "TeacherPortal/sign_up.html" %}
+    {% if error.error != "" %}
+        <span id="login-error" style="position:fixed; visibility:visible; top:5%;">{{ error.error }}</span>
+        <script>
+            let er=document.getElementById('login-error')
+            if(er.innerHTML!="")
+            {
+               
+                er.classList.add('open-box')
+                setTimeout(()=>{
+                  er.removeAttribute('style')
+
+                },10000)
+            }
+        </script>
+    {% endif  %} 
+    <div id="content-container">
+        <section class="section" id="header-container">
+            <div id="header-heading"><h1>Sarvodaya Bal Vidyalaya</h1></div>
+            <nav id="navigation-links">
+                <ul>
+                    <div class="navigate" id="navigate-to-login"><li><span onclick="toggleLogin()">login</span></li></div>
+                    <div class="navigate" id="navigate-to-sign-up"><li><span onclick="toggleSignUp()" >sign up</span></li></div>
+                </ul>
+            </nav>
+        </section>
+        <section>
+            <div id="imgSlider">
+
+            </div>
+        </section>
+        <section class="section" id="header-below-principle-container">
+            <div class="second-header-div" id="principle-image">
+             <img src="" alt="">
+            </div>
+            <div class="second-header-div" id="principle-discription">
+                 <h1 id="desscription-about-principle" class="heading">description of principle</h1>
+                 <p id="about-principle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus ab, quos autem sunt ullam beatae eligendi debitis veritatis suscipit eaque libero nostrum ad possimus facilis reprehenderit nihil placeat. Alias.
+                 Odio facere, impedit cumque mollitia harum eligendi! Amet ipsa assumenda, voluptas atque iusto deleniti. Saepe incidunt id quidem veritatis tempora, cumque accusamus harum animi temporibus aliquid similique eos exercitationem impedit.
+                 Provident incidunt assumenda, architecto eos ad ipsa quia repellendus dicta nulla ut, tenetur libero, et vero voluptates enim illum minima. Nostrum, eius fugiat! Necessitatibus esse eaque dolore veritatis, similique perspiciatis!
+                </p>
+            </div>
+        </section>
+        <section class="section" id="vice-principle-container">
+              <div class="third-header-div" id="vice-principle-description">
+                <h1 id="description-about-vice-principle" class="heading">description of vice principle</h1>
+                <p id="about-vice-principle">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam doloremque at excepturi expedita facilis, nostrum cupiditate odio aperiam vel totam repellendus? Dolorem autem possimus excepturi reiciendis molestiae temporibus eum ipsum?
+                Quod voluptatum aliquid nulla fuga excepturi voluptatem laboriosam magni culpa. Laudantium, dolorem! Asperiores in quo illo quidem. A repellat laudantium libero pariatur soluta natus eum error, ad magni. Repudiandae, dolorem.
+                Accusantium unde error odio deserunt nulla rem suscipit veniam? Culpa quam quos provident expedita totam? Aperiam quasi enim, sunt consequatur aut sint voluptates molestiae blanditiis, commodi harum porro repellat error!
+                Culpa ipsa ratione repudiandae quibusdam porro sunt optio eligendi distinctio. Illum odit quod reiciendis, quos voluptas cum ratione distinctio, eius ut nemo voluptatem eum repellat accusantium itaque eaque commodi nobis?
+                Soluta modi porro, provident nostrum amet itaque numquam et enim magnam dolorum ipsam accusantium aliquam velit doloribus obcaecati expedita a, cupiditate quibusdam assumenda! Totam dolore facilis odit qui sapiente odio.
+                Quisquam quis iure sed hic in dicta ea quaerat officiis expedita, blanditiis aut minima voluptas, eius voluptates recusandae suscipit tempora! Iste eveniet fugiat veniam quis. Velit odio quaerat optio animi?
+              </div>
+              <div class="third-header-div" id="vice-principle-image">   
+                <img src="" alt="">                   
+              </div>
+        </section>
+        <section class="section" id="footer-container" >
+                <div class="footer-links"><a href=""><i class="fa-brands fa-facebook-f" id="facebook"></i></a></div>
+                <div class="footer-links"><a href=""><i class="fa-brands fa-instagram-square" id="instagram"></i></a></div>
+                <div class="footer-links"><a href=""><i class="fa-brands fa-twitter" id="twitter"></i></a></div>
+        </section>
+    </div>
+</body>
+</html>

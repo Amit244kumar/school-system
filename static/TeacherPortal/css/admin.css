@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+body{
+    
+    margin:0px 0px;   
+}
+#Admin-header-container{
+    /* margin-top: -20px;; */
+    box-shadow: 5px 6px 100px grey;
+    padding-left: 10px;
+    background-color: #333; 
+    position: fixed;
+    top:0px;
+    height: 80px;
+    width: 100%;
+}
+#Admin-header-container #admin-header h1{
+    position: absolute;
+    top: -5px;
+    left: 200px;
+    font-size: 40px;
+    color: white;
+}
+#Admin-header-container #admin-icon{
+    position: relative;
+    float: right;
+    right: 300px;
+    top: 40px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#Admin-header-container #admin-credential{
+    position: relative;
+    float: right;
+    right: 237px;
+    top: 81px;
+    box-shadow: 2px 5px 7px grey;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #8080803d;
+    visibility: hidden;
+}
+
+#Admin-header-container #admin-credential::after{
+    content: " ";
+    position: absolute;
+    right: 30px;
+    top: -15px;
+    border-top: none;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid #9e9e9e ;   
+}
+
+#Admin-header-container .admin-details{
+    padding: 10px;
+}
+#Admin-header-container .admin-details a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+}
+#Admin-header-container .admin-details:hover{
+    background-color:white;
+    border-radius: 10px;
+}
+#Admin-header-container .user{
+    position: relative;
+    top: 2px;
+    color: black;
+    font-size: 18px;
+}
+/* left side bar */
+#left-side-container{
+    position: relative;
+    top: 80px;
+    width: 20%;
+    height: 622px;
+    background-color:  #b4abab75;
+    overflow-y: scroll;
+    overflow-x: clip;
+    padding: 9px;
+
+}
+#left-side-container #search-student{
+   padding: relative;
+}
+#left-side-container #search-student input{
+    position: relative;
+    left: 32px;
+    width: 211px;
+    height: 33px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: large;
+}
+#left-side-container #search-student input:focus{
+   outline: none;
+   
+}
+#left-side-container #search-student #ji-rowor433
+{
+    color: red;
+    position: relative;
+    top: 54px;
+    font-size: 18px;
+    left: 10px;
+}
+
+#left-side-container #search-student button{
+    position: relative;
+    float: left;
+    top: 20px;
+    left: 53px;
+    width: 167px;
+    border-radius: 5px;
+    border: 0px;
+    height: 29px;
+    font-size: larger;
+    font-family: auto;
+    background-color: DodgerBlue;
+    box-shadow: 0px 11px 10px grey;
+    transition: 400ms;
+}
+#left-side-container #search-student button:hover{
+    box-shadow: 0px 0px  grey;
+    cursor: pointer;
+    background-color: rgb(7, 183, 7);
+}
+#left-side-container #closed-tab{
+    height: 20px;
+    
+}
+#left-side-container #closed-tab .hide{
+    display: none;
+}
+#left-side-container .email-id-permission{
+    position: inherit;
+    left: -23px;
+    top: 83px;
+    width:  323px;
+    height: 232px;
+    background-color: #f7f3f3;
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+}
+  
+#left-side-container #closed-tab h1{
+    font-size: 16px;
+    width: 284px;
+    position: relative;
+    top: -36px;
+    height: 10px;
+}
+
+.email-id-permission .arrow{
+    position: relative;
+    top:-2px;   
+    font-size: 20px;
+    left:106px;
+    padding: 2px;
+    
+}
+.email-id-permission .arrow:hover{
+    color:rgb(184, 179, 179);
+    cursor: pointer;
+}
+.email-id-permission h1{
+    position: relative;
+    left: 30px;
+    width: 228px;
+    height: 59px;
+}
+.email-id-permission #email-id-for-permission{
+    position: relative;
+    left: 28px;
+    top: -17px;
+    height: 33px;
+    border-radius: 5px;
+    border: 0px;
+    font-size: large;
+}
+.email-id-permission #email-id-for-permission:focus{
+    outline: none;
+}
+.email-id-permission #submit-button{
+    position: relative;
+    top: 33px;
+    left: 47px;
+    width: 167px;
+    border-radius: 5px;
+    border: 0px;
+    height: 29px;
+    font-size: larger;
+    font-family: auto;
+    background-color: DodgerBlue;
+    box-shadow: 0px 11px 10px grey;
+    transition: 400ms;
+}
+.email-id-permission #server-response{
+  
+    position: absolute;
+    bottom: 49px;
+    width: 275px;
+    left: 30px;
+
+}
+.email-id-permission #submit-button:hover{
+    background-color: rgb(255, 99, 71);
+    box-shadow: 0px 0px;
+    cursor: pointer;
+}
+
+#data-container{
+    background-color: #9e9e9e38;
+    position: fixed;
+    bottom: 0px;
+    width: 1000px;
+    left: 400px;
+    padding: 20px;
+    height: 544px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    display:none;
+
+}
+#data-container #cross-icon{
+    float: right;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+#data-container #data-header #jefh-4hf{
+    text-align: center;
+    font-size: 53px;
+    margin: 0px;
+}
+#data-container #ghdge4-45dft{
+    height:543px;
+}
+#data-container .hfgghd-34dfhfdh{
+ 
+    font-size: 20px;
+    padding: 11px;
+    margin: 23px;
+    position: relative;
+    left: 79px;
+    width: 347px;
+}
+
+#data-container .right-side{
+    position: relative;
+    left: 603px;
+    bottom: 539px;
+}
+#data-container .student{
+    position: relative;
+    bottom: 893px;
+}
+#data-container .hfgghd-34dfhfdh .user-data{
+
+    padding: 16px;
+    background-color: #ffffff82;
+    position: relative;
+    left: -1px;
+    top: 18px;
+    border: 1px solid black;
+    border-radius: 10px;
+}

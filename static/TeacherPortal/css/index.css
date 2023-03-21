@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+
+body{
+    margin:0px;
+}
+#content-container.active{  
+    pointer-events:none;
+    user-select: none;
+    overflow:hidden;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,.5);
+}
+#header-container
+{
+    /* box-shadow: 5px 6px 100px grey; */
+    padding-left: 10px;
+    /* background-color: #333;  */
+    position: absolute;
+    height: 80px;
+
+    width: 100%;
+    /* background: -webkit-linear-gradient(193.4deg,red -10.74%,lightpink 60.8%); */
+}
+
+#header-container #header-heading h1{
+    position: absolute;
+    color: white;
+    left: 200px;
+    font-size: 40px;
+    top:-5px;
+}
+#header-container #navigation-links{    
+    position:relative;
+    left:1200px;
+    float: left;
+}
+#imgSlider{
+    width: 100%;
+    position: relative;
+    height: 600px;
+    /* top: 1px; */
+    background-size: 100% 100%;
+    background-image: url(https://edu-websites.co.uk/wp-content/uploads/2019/10/10-things-to-include-on-your-school-website.jpg);
+    z-index: -1;
+    animation: changeImage 10s linear infinite ;
+}
+@keyframes changeImage{
+    0%{
+        background-image: url(https://edu-websites.co.uk/wp-content/uploads/2019/10/10-things-to-include-on-your-school-website.jpg);
+    }
+    25%{
+        background-image: url(https://img.freepik.com/free-photo/back-school-background-with-school-supplies-chalkboard_23-2148958974.jpg?w=360);
+    }
+    50%{
+        background-image: url(https://img.freepik.com/free-vector/realistic-hand-drawn-back-school-background_52683-41889.jpg?w=2000);
+    }
+    75%{
+        background-image: url(https://img.freepik.com/free-photo/office-stationery-placed-blackboard_23-2148199919.jpg);
+    }
+    100%{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI2KL9MBuWPba0UKnWgrCc4ZcFSwIniSd14b6nPF_Kt4xkl91PJWiLYKihFT3_xgnlb0I&usqp=CAU);
+    }
+
+}
+#header-container #navigation-links ul{
+    list-style-type: none;
+    display: flex;
+    padding: 20px;
+    width:300px;
+    position: relative;
+    left:-180px;
+    top:14px;
+}
+#navigation-links ul .navigate {
+    width: 250px;
+    text-align: center;
+}
+.navigate span{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+.navigate span:hover{
+    color: #37dbb9;
+    cursor: pointer;
+   
+}
+#header-below-principle-container
+{
+    display: flex;
+    padding: 20px;
+}
+#header-below-principle-container .second-header-div{
+    width: 800px;
+    padding: 20px;
+    margin:40px;
+    box-shadow: 0px 0px 5px black;
+     border-radius: 10px;
+}
+
+#header-below-principle-container{
+    padding-top: 100px;
+}
+#header-below-principle-container #about-principle{
+   word-spacing: 10px; 
+}
+#vice-principle-container
+{
+    display: flex;
+    padding:20px;
+}
+.heading{
+  text-align: center;
+  font-size: 30px;
+  padding: 3px;
+  margin:5px;
+}
+#vice-principle-container .third-header-div{
+    width: 800px;
+    padding: 20px;
+    margin: 40px;
+    box-shadow: 0px 0px 5px black;
+    border-radius: 10px;
+}
+#footer-container{
+    width: 100%;
+    height: 200px;
+    background-color: grey;
+    display:flex;
+}
+#footer-container .footer-links i{
+    width: 50px;
+    font-size: 25px;
+    position: relative;
+    left: 700px;
+    top: 100px; 
+    height: 30px;
+    margin-right:10px ;
+    text-align: center;
+    padding: 10px;
+    border-radius: 30px;
+    background: -webkit-linear-gradient(193.4deg,#ff7c00 20.74%,#1d22da 60.8%);    
+    clip-path: circle(40%);
+    color:black;
+    box-shadow: 0px 0px 20px red;
+}
+#footer-container .footer-links #facebook:hover{ 
+   color:rgb(10, 86, 238);
+   background:grey;
+}
+#footer-container .footer-links #instagram:hover{ 
+  background:none;
+  color:rgba(255, 166, 0, 0.793)
+  /* color: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); */
+}
+#footer-container .footer-links #twitter:hover{ 
+    color:#1DA1F2;
+    background:none;
+}
+/* sign up page starting css */
+.icon{
+    position: absolute;
+    left: 262px;
+    top: 116px;
+    font-size: 19px;
+    visibility: hidden;
+}   
+#sign-up-page{
+    position: fixed;
+    left:40%;
+    top:20%;
+    border-radius: 10px;
+    padding: 20px;
+    margin:30px;
+    box-shadow: 0px 0px 1000px black;
+    width: 300px;
+    padding-top: 5px;
+    background-color: rgb(208, 204, 204);
+    visibility:hidden;
+}
+ #sign-up-page.active{
+    visibility:visible;
+} 
+#sign-up-page #heading{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 340px;;
+    height: 50px;
+    background-color: #333;
+    position: relative;
+    top:-45px;
+    left: -20px;;
+    color:white;
+   /* background-color:rgb(186, 182, 182)  */
+}
+#sign-up-page #heading h1{
+  position: inherit;
+  top:-19px;
+  left:20px;
+  margin-top: 0px;
+  margin-right: -10px;
+  width:150px;
+}
+#sign-up-page #heading #cross-icon{
+    position: relative;
+    top:14px;
+    left:90%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#sign-up-page .user-detail{
+    margin:10px;
+    padding-top: 10px;
+    position: relative;
+    top:-30px;
+    width:fit-content;
+}
+#sign-up-page .input-field{
+    width: 250px;
+    height: 25px;
+    border-left-style:hidden;
+    border-right-style:hidden;
+    border-top-style:hidden;
+    background-color: rgb(208, 204, 204);
+}
+#sign-up-page .input-field:focus{
+    outline: none;
+    z-index:auto;
+}
+#sign-up-page .submit-button{
+    
+    color: black;
+    position: relative;
+    left: 10px;
+    top: -10px;
+    width: 80px;
+    height: 30px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: #00b0ff;
+    cursor: pointer;
+}
+#not-register-email-id{
+    color:red;
+    font-size: 14px;
+}
+/* sign up ending css */
+/* login starting css */
+#login-page{
+    position: fixed;
+    left:40%;
+    top:20%;
+    border-radius: 10px;
+    padding: 20px;
+    margin:30px;
+    box-shadow: 0px 0px 1000px black;
+    width: 300px;
+    padding-top: 5px;
+    background-color: rgb(208, 204, 204);
+    visibility: hidden;
+    transition:1.ms;
+    opacity: 0; 
+}
+#login-page #heading{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 340px;;
+    height: 50px;
+    background-color: #333;
+    position: relative;
+    top:-45px;
+    left: -20px;;
+    color:white;
+   /* background-color:rgb(186, 182, 182)  */
+}
+#login-page.active{
+    visibility:visible;
+    transition: 0.2ms;
+    opacity: 1;
+} 
+#login-page #heading h1{
+    position: inherit;
+    top:-19px;
+    left:20px;
+    margin-top: 0px;
+    margin-right: -10px;
+    width:150px;
+}
+#login-page #heading #cross-icon{
+    position: relative;
+    top:14px;
+    left:90%;
+    font-size: 30px;
+    cursor: pointer;
+}
+#login-page .user-details{
+    margin:10px;
+    padding-top: 10px;
+    position: relative;
+    top:-30px;
+    width:fit-content;
+}
+#login-page .radio-box{
+    border:2px solid black;
+    width: 80%;
+    border-radius:10px;
+    transition-duration: 1.1ms;
+}
+#login-option{
+    position: relative;
+    top:-23px;
+    left:13px; 
+    font-weight:bolder;
+}
+#login-page .radio-box .option-fields{
+    width: 15px;
+    size:20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+#login-page .user-details .input{
+    width: 250px;
+    height: 25px;
+    border-left-style:hidden;
+    border-right-style:hidden;
+    border-top-style:hidden;
+    background-color: rgb(208, 204, 204);
+}
+#login-page .input:focus{
+    outline: none;
+}
+#login-page #submit-button{
+    
+    color: black;
+    position: relative;
+    left: 10px;
+    top: -10px;
+    width: 80px;
+    height: 30px;
+    font-size: large;
+    border-radius: 5px;
+    border: none;
+    background-color: #00b0ff;
+    cursor: pointer;
+}
+.error-msg{
+    position:relative;
+    top:-26px;
+    left:13px;   
+    color:red; 
+}
+#login-page #message-from-server{
+    position: relative;
+    left: -75px;
+    top: 17px;
+    color: red;
+    margin-top: 0px;
+}
+#login-error{
+    
+    height: 20px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 2px 5px 5px gray;
+    background-color:#43b6b1;
+    color: black;
+    font-family:'Barlow', sans-serif;
+    visibility: hidden; 
+    transition: transform 1.4s, top 1.4s; 
+    z-index:calc(2.2) ;
+}
+#open-box{
+    position: absolute;
+    visibility: visible;
+    top:20%;
+    transform: translate(-50% -50%) scale(1.0);
+
+}
+/* login ending css */
+@media screen and (max-width:700px) and (min-width:300px){
+    #header-container #header-heading h1{
+        font-size: 25px;
+        position: relative;
+        left:20px;
+
+        width: 200px;
+    }
+    #footer-container .footer-links i{
+        position: relative;
+        left:100px;
+        top:40px;
+    }
+    #header-container #navigation-links{
+        position: relative;
+        left: 430px;
+        top: -120px;
+    }
+    #header-container #navigation-links ul{
+        width: 10px;
+        padding-top:20px;
+        display: inline;
+    }
+    #header-container #navigation-links ul li{
+        width: 100px;
+        border: solid 2px white;
+        margin: 10px;
+    }
+    #header-container #navigation-links ul a{
+        font-size: 15px;
+    }
+    #header-below-principle-container{
+        display: block;
+
+    }
+    #header-below-principle-container #principle-image{
+        display:block;
+        width: 300px;
+        margin-left: 5px;
+        height: 400px;
+   }
+    #header-below-principle-container #principle-discription{
+         display:block;
+         width: 300px;
+        margin-left: 5px;
+    }
+    #vice-principle-container
+    {
+        display: block;
+    }
+    #vice-principle-container #vice-principle-description{
+        display:block;
+        width: 300px;
+        margin-left: 5px;
+        height: 800px;   
+    }
+    #vice-principle-container #vice-principle-image{
+        display:block;
+        width: 300px;
+       margin-left: 5px;
+       height: 400px;
+    }
+
+}

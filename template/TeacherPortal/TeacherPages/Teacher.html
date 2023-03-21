@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/admin.css'%}">
+    <link rel="stylesheet" href="{% static 'teacherPortal/css/teacher.css'%}">
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+    <script src="http://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
+    <script src="{% static 'TeacherPortal/js/admin.js'%}"></script>
+
+
+    <title>teacher account</title>
+
+    <script>
+        function show()
+        {
+           document.getElementById('admin-credential').style.visibility='visible'
+        }
+        function hide()    
+        {
+            document.getElementById('admin-credential').style.visibility='hidden'
+        }   
+    </script>
+
+    <script src="{% static 'teacherPortal/js/teacher.js'%}"></script>
+    
+</head>
+<body >
+<div id="container">
+    <section id="Admin-header-container" >
+        <div id="admin-header">
+           <h1>Welcome, {{teacher.real_name}}</h1>
+       </div>
+        <div id="admin-icon" onmouseover="show()" onmouseleave="hide()">
+            <i class="fa-solid fa-angle-down" style="font-size:20px"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+       <div  id="admin-credential" onmouseover="show()" onmouseleave="hide()">
+            <div id="admin-profile" class="admin-details">
+                <i class="fa-solid fa-address-card user"></i>
+                <a href="http://localhost:8000/Teacher-Portal/teacher-profile/">profile</a>
+            </div>
+            <hr>
+            <div id="admin-details" class="admin-details">
+                <i class="fa-solid fa-id-card"></i>
+                <a href="http://localhost:8000/Teacher-Portal/teacher-information/">details</a>
+            </div>
+            <hr>
+            <div id="Admin-logout" class="admin-details">
+                <i class="fa-solid fa-right-from-bracket user" ></i>
+                <a href="http://localhost:8000/Teacher-Portal/logout">logout</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="left-side-container">
+        <div id="search-student">
+            <input type="text" name="search" placeholder="search student" autocomplete="off" id="search-input">
+            <span id="ji-rowor433"></span>
+            <button onclick="checkINputValue()">search</button>
+        </div>
+        <div class="left-side-bar first-container" id="closed-tab">
+            <i class="fa-solid fa-angle-down arrow" style="font-size:20px;visibility:hidden;" onclick="closedTab()"></i>
+            <i class="fa-solid fa-angle-up arrow" style="font-size:20px; position:relative; left:28px" onclick="openTab()"></i>
+            <div class="student-registeration" id="left-side-heading">
+                <h1>Register student for login</h1>
+            </div>
+            <div class="student-registeration" id="name">
+                <input class="student-registration" type="text" placeholder="name" id="student-name" name="name" autocomplete="off">
+            </div>
+            <div class="student-registeration" id="admission-no">
+                <input class="student-registration" type="number" id="student-admisson-no" name="addmission-number" placeholder="addmission no" autocomplete="off">
+            </div>
+            <div class="student-registeration" id="Date-of-birth">
+                <input class="student-registration" type="date" name="DOB" id="DOB" placeholder="Date-of-birth" autocapitalize="off">
+            </div>
+            <div class="student-registration" id="uploading-file">
+                <span class="text" class="student-registration">Upload file for multiple registration</span>
+                <input type="file" class="text" id="choose-file" class="student-registration" onchange="uploaded()">
+                <button class="student-registration" id="submit-file" onclick="sendFileDataToServer()">submit</button>
+                <span id="file-uploading-error" style="color:red;"  ></span>
+                <span id="student-registration-error" style="position:relative; top:50px; color:red;"></span>
+            </div>
+            <div class="student-registration" id="registration-button">
+                <input type="submit" value="Register" class="student-registration" onclick="register()" >
+            </div>
+        </div>
+    </section>
+</div>
+    <section id="result-of-student-registration">
+        <div class="cfd45-33fdjdf-48ufdh" id="header-of-student-registration">
+            <i class="fa-sharp fa-solid fa-xmark" id="cross-sign" onclick="closedResult()"></i>  
+            <h1>Result of student registration</h1>
+        </div>
+        <div class="cfd45-33fdjdf-48ufdh" id="popup-box-content">     
+        </div>
+    </section>
+    <section id="data-container">
+        <div id="cross-icon">
+             <i class="fa-solid fa-xmark" onclick="closed()"></i>
+        </div>
+        <div id="data-header">
+          <p id="jefh-4hf"></p>
+        </div>
+        <div id="ghdge4-45dft">
+            
+        </div>
+</section>
+</body>

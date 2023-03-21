@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/admin.css'%}">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/adminProfile.css'%}">
+    <script src="{% static 'TeacherPortal/js/teacherProfile.js' %}"></script>
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+
+    <title>{{TD.realname}} profile</title>
+
+</head>
+<body>
+   
+    <section id="Admin-header-container">
+        <div id="admin-header">
+           <h1>Welcome, {{TD.realname}}</h1>
+       </div>
+        <div id="admin-icon" onmouseover="show()" onmouseleave="hide()">
+            <i class="fa-solid fa-angle-down" style="font-size:20px"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+       <div  id="admin-credential" onmouseover="show()" onmouseleave="hide()">
+            <div id="admin-profile" class="admin-details">
+                <i class="fa-solid fa-address-card user"></i>
+                <a href="http://localhost:8000/Teacher-Portal/teacher-profile/">profile</a>
+            </div>
+            <hr>
+            <div id="Admin-logout" class="admin-details">
+                <i class="fa-solid fa-right-from-bracket user" ></i>
+                <a href="http://localhost:8000/Teacher-Portal/logout">logout</a>
+            </div>
+            
+        </div>
+    </section>
+             
+    <section id="Admin-profile-container">
+        <div id="admin-profile-header">
+            <h1>profile</h1> 
+        </div>
+        <div id="admin-details-container">
+            <!-- for real name -->
+            <div class="admin-credentials personal-details">
+                <p id="real-name">real name</p>
+               <input type="text" value="{{ TD.realname }}" >
+            </div>
+            <!-- for real name -->
+            <div class="admin-credentials personal-details" >
+                <p id="user-name">user name</p>
+               <input type="text" value="{{ TD.username }}" >
+            </div>
+            <div class="admin-credentials login-details" >
+                <p id="email-id">email id</p>
+               <input type="email" value="{{ TD.emailid}}" >
+            </div>
+            <div class="admin-credentials login-details" >
+                <p id="password">password</p>
+               <input type="password" value="{{ TD.password }}" id="uhw4435hgd">
+               <i class="fa-solid fa-key key" onclick="showPassword()"></i>
+               <i class="fa-sharp fa-solid fa-lock lock" style="position:relative; right: 452px; color:red" id="closed"></i>
+               <i class="fa-sharp fa-solid fa-lock-open lock"  style="visibility:hidden; color:green" id="open"></i>
+            </div>
+        </div>
+        <!-- <div id="save-details-button">
+             <button>save</button>
+        </div> -->
+    </section>
+</body>
+</html>

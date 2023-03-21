@@ -1,0 +1,190 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/admin.css'%}" >
+    <!-- <script src="{% static 'TeacherPortal/js/teacherProfile.js' %}"></script>x` -->
+    <link rel="stylesheet" href="{% static 'studentPortal/student_css/student.css' %}">
+    <link rel="stylesheet" href="{% static 'studentPOrtal/student_css/studentdetails.css' %} ">
+    <script src="{% static 'StudentPortal/student_js/studentInformation.js' %}"></script>
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+    <script>
+        function show()
+        {
+            document.getElementById('admin-credential').style.visibility='visible'
+            document.getElementById('student-details-container').style.zIndex='-1';
+            document.getElementById('dsf34df-4fv').style.zIndex='-1'
+        }
+
+        //hiding admin credential    
+        function hide()    
+        {
+           document.getElementById('admin-credential').style.visibility='hidden'
+           document.getElementById('student-details-container').style.zIndex='1';
+           document.getElementById('dsf34df-4fv').style.zIndex='1'
+        }
+      
+    </script>
+    <title>student details</title>
+
+</head>
+<body>
+   
+    <section id="Admin-header-container">
+        <div id="admin-header">
+           <h1>student information </h1>
+       </div>
+        <div id="admin-icon" onmouseover="show()" onmouseleave="hide()" >
+            <i class="fa-solid fa-angle-down" style="font-size:20px"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+       <div  id="admin-credential" onmouseover="show()" onmouseleave="hide()" >
+            <div id="admin-profile" class="admin-details">
+                <i class="fa-solid fa-user"></i>
+                <a href="http://localhost:8000/Student-Portal/student-profile/" >profile</a>
+            </div>
+            <hr>
+            <div id="admin-details" class="admin-details">
+                <i class="fa-solid fa-id-card"></i>
+                <a href="http://localhost:8000/Student-Portal/student-information/" >details</a>
+            </div>
+            <hr>
+            <div id="Admin-logout" class="admin-details">
+                <i class="fa-solid fa-right-from-bracket user" ></i>
+                <a href="http://localhost:8000/Student-Portal/logout">logout</a>
+            </div>
+        </div>
+    </section>  
+    {% if  d.fillDetails == 'true' %}
+    <section  id="dsf34df-4fv">
+       <div >
+            <p style="margin-top:0px;">fill your personal ,School and address Details</p>
+       </div>
+    </section>
+       <style>
+        #left{
+            position: relative;
+            top: -36px;
+            width: 100px;
+        } 
+       </style>
+    {% endif %}
+    <section id="left">
+        <nav id="navigation-links">
+            <div id="left-side-bar">
+                <ul id="links">
+                    <div class="list-item"><li><a href="http://localhost:8000/Student-Portal/student-account"><i class="fa-solid fa-house"></i>  Home</a></div>  
+                </ul>   
+            </div>
+        </nav>
+    </section>
+    <section id="student-details-container"> 
+        <div class="fjg45-fg" id="personal-details">  
+            <div class="fsf-2dfg header" >
+                <span>Personal Details</span>
+                <p id="server-response" ></p>
+            </div>
+            <div class="fsf-2dfg input-boxs" >
+                <div id="email-id">
+                    <p>email id</p>
+                    <input type="email" name="email-id" id="email"  value="{{ PD.emailid }}" oninput="Emailvalidation()" class="df45fgj-55dfg">
+                </div>
+                <div id="personal-phone-no">
+                    <p>personal phone no</p>
+                    <input type="text" name="persoanl-phone-no" value="{{ PD.personalNo }}" class="df45fgj-55dfg">
+                </div>
+                <div id="student-name">
+                    <p>student name</p>
+                    <input type="email" name="atudent-name" value="{{ PD.studentName }}" class="df45fgj-55dfg">
+                </div>
+                <div id="father-name">
+                    <p>father name</p>
+                    <input type="email" name="father-name" value="{{ PD.fatherName }}" class="df45fgj-55dfg">
+                </div>
+                <div id="mother-name">
+                    <p>mother name</p>
+                    <input type="email" name="mother-name" value="{{ PD.motherName }}" class="df45fgj-55dfg">
+                </div>
+                <div id="phone-no">
+                    <p>phone no</p>
+                    <input type="number" name="phnoe-no" value="{{ PD.phoneNo }}" class="df45fgj-55dfg">
+                </div>
+                <div id="DOB">
+                    <p>DOB</p>
+                    <input type="text" name="email-id" value="{{ PD.DOB }}" class="df45fgj-55dfg" value="{{ d.DOB }}" readonly>
+                </div>
+                <div id="gender">
+                    <p>Gender</p>
+                    <select name="gender" id="" class="df45fgj-55dfg">
+                        <option value="select" >select gender</option>
+                        <option value="MALE" {% if PD.gender == 'MALE' %} selected {% endif %} >MALE</option>
+                        <option value="FEMALE" {% if PD.gender == 'FEMALE' %} selected {% endif %}>FEMALE</option>
+                        <option value="OTHER" {% if PD.gender == 'OTHER' %} selected {% endif %}>OTHER</option>
+                    </select> 
+                    <span id="selection-gender-error"></span>
+                </div>
+            </div>
+        </div>
+        <div class="fjg45-fg" id="school-details" style="height:420px; ">
+            <div class="fsf-2dfg header">
+                <span>School Details</span>
+            </div>
+            <div class="fsf-2dfg input-boxs" class="input-boxs">
+                 <div id="student-id">
+                    <p>student id</p>
+                    <input type="number" name="student-id"  value="{{ SD.studentid }}"class='edf45-gjd3'>
+                 </div>
+                 <div id="rool-no">
+                    <p>roll no</p>
+                    <input type="number" name="=roll-no" value="{{ SD.rollNo }}" class='edf45-gjd3'>
+                 </div>
+                 <div id="class"> 
+                    <p>class</p>
+                    <input type="text" name="class" value="{{ SD.class }}" class='edf45-gjd3'>
+                 </div>
+                 <div id="stream">
+                    <p>stream</p>
+                    <select name="stream" id="" class='edf45-gjd3'>
+                        <option value="select">select stream</option>
+                        <option value="Arts" {% if SD.stream == 'Arts' %} selected {% endif %}>Arts</option>
+                        <option value="Commerce" {% if SD.stream == 'Commerce' %} selected {% endif %}>Commerce</option>
+                        <option value="Science" {% if SD.stream == 'Science' %} selected {% endif %}>science</option>
+                    </select>
+                    <span id="selection-stream-error"></span>
+                 </div>
+                 <div id="section">
+                    <p>Section</p>
+                    <input type="text" name="section" value="{{ SD.section }}" class='edf45-gjd3'>
+                 </div>
+            </div>
+        </div>
+        <div class="fjg45-fg" id="address-details" style="height:300px">
+            <div class="fsf-2dfg header">
+                <span>address details</span>
+            </div>
+            <div class="fsf-2dfg input-boxs">
+                  <div id="state">
+                    <p>State</p>
+                    <input type="text" name="state" value="{{ AD.state }}" class="jfh8rhr-fhf7gr">
+                  </div>
+                  <div id="area">
+                    <p>Area</p>
+                    <input type="text" name="Area" value="{{ AD.area }}" class="jfh8rhr-fhf7gr">
+                  </div>
+                  <div id="address">
+                    <p>Address</p>
+                    <input type="text" name="address" value="{{ AD.address }}" class="jfh8rhr-fhf7gr">
+                  </div>
+            </div>
+        </div>
+        <div id="button">
+            <button onclick="validationOfAllInputs()">save</button>
+            <span id="error"></span>
+        </div>
+    </section>
+
+</body>
+</html>

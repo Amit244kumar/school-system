@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+
+#container .active{
+    
+    pointer-events:none;
+    user-select: none;
+    overflow:hidden;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(0,0,0,.5);
+}
+
+#left-side-container{  
+    width: 20%;
+    height: 641px;
+    position: fixed;
+    top: 80px;
+    overflow: scroll;
+    padding-right:0px;
+    background-color: #b4abab75;
+    transition: transform 1.4s, top 1.4s;
+}
+
+.left-side-bar i{
+    float: right;
+    margin-right:10px;
+    color:black;
+}
+
+.left-side-bar i:hover{
+    cursor: pointer;
+    color: rgb(142, 140, 140);
+}
+
+#left-side-container #closed-tab {
+    height: 10px;
+    position: relative;
+    top: 75px;
+}
+#left-side-container #closed-tab .student-registration{
+   display: none;
+  
+}
+#left-side-container #closed-tab #left-side-heading h1{
+   position: relative;
+   top:-10px;
+}
+#left-side-container .left-side-bar{
+   padding-left: 15px;
+   margin-top: 20px;
+   margin-left: -10px;
+   padding-bottom: 15px;
+   background-color: #f7f3f3;
+   position: relative;
+   top: 75px;
+}
+.first-container{
+    border-top:2px solid black;
+    border-bottom: 2px solid black;
+
+}
+#left-side-container #left-side-heading{
+    font-family: 'Barlow', sans-serif;
+    font-size: 15px;
+}
+.left-side-bar .student-registeration input{
+    width: 207px;
+    height: 26px;
+    border-left-style: hidden;
+    border-right-style: hidden;
+    border-top-style: hidden;
+    background-color: #80808000;
+    font-weight: 700;
+    margin-bottom: 26px;
+}
+.left-side-bar #name input:focus
+{
+    outline: none;
+}
+.left-side-bar #admission-no input:focus{
+   outline: none;
+}
+.left-side-bar #Date-of-birth input:focus{
+   outline: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.left-side-bar #registration-button input{
+    width: 104px;
+    height: 36px;
+    color: #fff;
+    background-color: #ff5e00;
+    border: #ff5e00 solid 2px;
+    font-size: 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    box-shadow: 0 16px 9px grey;
+    transition: 400ms;
+    
+}
+.left-side-bar #registration-button input:hover{
+    background-color: green;
+    border: green solid 2px;
+    box-shadow: 0px 0px grey;
+    cursor:pointer;
+}
+.left-side-bar #uploading-file{
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+.left-side-bar #uploading-file .text{
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 5px;
+}
+.left-side-bar #uploading-file #choose-file::-webkit-file-upload-button{
+    border-radius: 30px;
+    border:solid 1px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+.left-side-bar #uploading-file #choose-file::-webkit-file-upload-button:hover{
+   background-color: rgb(203, 195, 195);
+}
+.left-side-bar #uploading-file #submit-file{
+    width: 104px;
+    height: 36px;
+    color: #fff;
+    background-color: #ff5e00;
+    border: #ff5e00 solid 2px;
+    font-size: 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 400ms;
+    pointer-events:none;
+    user-select: none;
+}
+
+.left-side-bar #uploading-file #submit-file:hover{
+    background-color: #dd642d;
+    cursor: pointer;
+}
+
+#result-of-student-registration{
+    width: 50%;
+    height: 430px;
+    position: relative;
+    left: 30%;
+    top: 99px;
+    box-shadow: 2px 3px 5px grey;
+    border-radius: 8px;   
+    visibility: hidden;  
+}
+
+#result-of-student-registration #header-of-student-registration{
+    padding: 10px;
+    text-align: center;
+    font-size: larger;
+    background-color: #fff173;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 55px;
+}
+#result-of-student-registration #cross-sign{
+    position: relative;
+    float: right;
+    font-size: 32px;
+    top: -6px;
+    cursor: pointer;
+}
+#result-of-student-registration #popup-box-content{
+    height: 295px;
+    padding: 30px;
+    font-size: 18px;
+    overflow-y: scroll;
+    border-bottom-right-radius: 10px ;
+}
+
+#popup-box-content .table th,td{
+   font-size: 20px;
+   border-bottom: 2px solid black; 
+}
+
+#popup-box-content .table tr .name{
+    padding: 10px;
+    text-align: center;
+}
+#popup-box-content .table tr .admission-no{
+    padding: 10px;
+    text-align: center;
+
+}
+#popup-box-content .table tr .DOB{
+    padding: 10px;
+    text-align: center;
+
+}
+#popup-box-content .table tr .reason{
+    padding: 10px;
+    text-align: center;
+
+}
+#popup-box-content .table tr .status{
+    padding: 10px;
+    text-align: center;
+
+}

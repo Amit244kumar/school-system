@@ -1,0 +1,42 @@
+
+<div id="login-page"> 
+    <form action="" method="post" id="login-form" onsubmit="return loginValidation()">
+        <div id="heading">
+            <i class="fa-solid fa-xmark" id="cross-icon" onclick="toggleLogin()"></i>
+            <h1>login</h1>
+        </div>
+        {% csrf_token %}
+        <span id="login-option">select login option</span>
+    
+        <!-- radio box for selecting the student for login -->
+        <div id="student-option" class="user-details radio-box">
+           <input type="radio" class="option-fields" name="option" value="student" onclick="selectBox('student')">
+           <span>student</span>
+        </div>
+        <!-- radio box for selecting the admin for login -->
+        <div id="admin-option" class="user-details radio-box">
+           <input type="radio" class="option-fields" name="option" value="admin" onclick="selectBox('admin')">
+           <span>admin</span> 
+        </div> 
+        <!-- radio box for selecting the teacher for login -->
+        <div id="teacher-option" class="user-details radio-box">
+            <input type="radio" class="option-fields" name="option" value="teacher" onclick="selectBox('teacher')">
+            <span>teacher</span> 
+         </div>
+         <span class="error-msg" id="error-msg-for-option"></span>
+         <!-- first input box for username -->
+        <div class="user-details">
+             <input type="text" name="user-id" class="input" placeholder="Admission id"  autocomplete="off" required > 
+        </div>
+        <span class="error-msg" id="error-msg-for-input1"></span>
+        <!-- second input box for password -->
+        <div class="user-details">
+            <input type="password" name="password" class="input" placeholder="password" autocomplete="off" required >
+        </div>
+        <span class="error-msg" id="error-msg-for-input2"></span>
+         
+        <input type="submit" value="login" id="submit-button" >
+        <span id="message-from-server"></span>
+    </form>
+</div>
+ 

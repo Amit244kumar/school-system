@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+body{
+    margin:0px 0px;   
+    background-color: azure;
+}
+
+#main-container{
+    /* background-color: darkseagreen; */
+    display: flex;
+    /* height: 500px; */
+    width: 75%;
+    position: relative;
+    top: 114px;
+    left: 180px;
+    z-index: 1;
+}
+#main-container #information-container{
+    position: relative;
+    left: 100px;
+    top:-29px;
+}
+#main-container #header-container{
+    font-size: 40px;
+    position: relative;
+    top: 20px;
+}
+
+#main-container #input-boxs{
+    font-size: 20px;
+    height: 461px;
+    position: relative;
+    left: 48px;
+    top: 50px;
+}
+#main-container #input-boxs input{
+    width: 259px;
+    height: 27px;
+    border-radius: 5px;
+    border: solid 1px black;
+    font-size: 18px;
+    padding-left: 10px;
+}
+#main-container #input-boxs select{
+    width: 259px;
+    height: 29px;
+    border-radius: 5px;
+    border: solid 1px black;
+    font-size: 18px;
+}
+
+#main-container #input-boxs #gender,#state,#area,#address{
+    position: relative;
+    left: 572px;
+    bottom: 464px;
+}
+
+#main-container #submit-button{
+    position: relative;
+    left: 623px;  
+}
+#main-container #submit-button button{
+    width: 160px;
+    height: 36px;
+    font-size: 26px;
+    background-color: #00bcd4;
+    border: solid 1px black;
+    cursor: pointer;
+    box-shadow: 1px 2px 10px dodgerblue;
+}
+#main-container #submit-button button:hover{
+    background-color: #51e3f6;
+}
+
+#main-container #submit-button button:active{
+    box-shadow: none;
+}
+
+#main-container #submit-button span{
+    color: red;
+    font-size: 21px;
+}

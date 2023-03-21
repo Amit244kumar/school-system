@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Noto+Serif&family=Poppins:wght@300&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@0,100;1,100&family=Ubuntu:wght@300;400&family=Varela+Round&display=swap');
+body{
+    margin:0px;
+    font-family: Roboto Slab;
+    background-color:#80808033;
+}
+#header-container{
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    color:white;
+}
+#header-container #header-section-heading{
+    margin-top:0px;
+    font-family: Roboto Slab;
+    position: absolute;
+    left:200px;
+    top:30px;
+    font-size: 50px;
+}
+#header-container #profile-icon{
+    width: 60px;
+    text-align: center;
+    float: right;   
+    position: relative;
+    right:150px;
+    font-size: 35px;
+    background-color:#ff9800;
+    clip-path: circle(40%);
+    top:45px;
+    cursor:pointer;
+}
+#header-container #down-arrow{
+    float: right;
+    position: relative;
+    right:229px;
+    font-size: 25px;
+    top:58px;
+    cursor: pointer;    
+}
+#navigation-links{
+    width: 300px;
+    background:repeating-linear-gradient(#009688,purple);
+    height:611px;
+    position: relative;
+    top: 100px;
+    margin-top: 10px;
+    border-top-right-radius: 35px;
+   
+}
+
+#navigation-links #left-side-bar{
+    display: flex;
+    width: 240px;
+    position: relative;
+    left:60px;
+    top: 80px;
+    float: left;
+}
+#navigation-links #left-side-bar #links{
+    width: 100%;
+    margin-top:30px;    
+    position: relative;
+    top:-20px;  
+}
+#navigation-links #left-side-bar #links .list-item{
+   margin-top: 40px;
+   margin-bottom: 40px;
+}
+#navigation-links #left-side-bar #links .list-item li{
+    list-style-type: none;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+
+    transition: 0.4s;
+}
+#navigation-links #left-side-bar #links .list-item li a{
+    color:white;
+    text-decoration:none;
+    transition: 0.5s;
+}
+#navigation-links #left-side-bar #links .list-item li:hover{
+   box-shadow: 0px 0px 40px pink;
+   letter-spacing:2px;
+}
+#header-container #user-related-navigation-links{
+    list-style-type: none;
+    position: absolute;
+    left:83%;
+    top:-33%;
+    display: flex;
+    flex-direction:column;
+    width: 120px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 10px 30px grey;
+    opacity: 0;
+    
+}
+#header-container .navigation-links{
+    margin-top:5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    text-decoration: none;
+   
+    
+}
+#header-container .navigation-links a{
+    text-decoration: none;
+    font-size: 20px;
+    color:purple;
+    position: relative;
+    left: 10px;
+    
+}
+#header-container .navigation-links i{
+    color:purple;
+    margin-right: 5px;
+    position: relative;
+    left: 5px;
+}
+
+#header-container .navigation-links:hover{
+    background-color: #80808033;
+}
+
+@media screen and (max-width:700px) and (min-width:300px){
+    #header-container{
+        background-color: black;
+        width: 100%;
+        height: 50px;
+        color:white;
+    }
+    #header-container #header-section-heading{
+        margin-top:0px;
+        font-family: Roboto Slab;
+        position: absolute;
+        left:30px;
+        top:17px;
+        font-size: 25px;
+    }
+    #header-container #profile-icon{
+        width: 40px;
+        text-align: center;
+        position: relative;
+        right:30px;
+        font-size: 30px;
+        background-color:#ff9800;
+        clip-path: circle(40%);
+        top:6px;
+        cursor:pointer;
+    }
+    #header-container #down-arrow{
+        float: right;
+        position: relative;
+        right:86px;
+        font-size: 15px;
+        top:18px;    
+    }
+    #navigation-links{
+        width: 150px;
+        background:repeating-linear-gradient(#009688,purple);
+        height:400px;
+        margin-top: 25px;
+        border-bottom-right-radius: 35px;
+        border-top-right-radius: 35px;
+    }
+    #navigation-links #left-side-bar{
+        display: flex;
+        width: 200px;
+        position: relative;
+        left:20px;
+        top: 0px;
+    }
+    #navigation-links #left-side-bar #links{
+        width: 100%;
+        margin-top:0px;    
+        position: relative;
+        top:10px;  
+    }
+    #navigation-links #left-side-bar #links .list-item li{
+        position: relative;
+        left:-30px;
+        width: 120px;    
+    }
+}

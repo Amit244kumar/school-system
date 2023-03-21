@@ -1,0 +1,138 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/admin.css'%}">
+    <link rel="stylesheet" href="{% static 'teacherPortal/css/teacher.css'%}">
+    <link rel="stylesheet" href="{% static 'teacherPortal/css/teacherInformation.css' %}">
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teacher information</title>
+    
+    <script>
+        function show()
+        {
+           document.getElementById('admin-credential').style.visibility='visible'
+           document.getElementById('main-container').style.zIndex='-1'
+        }
+        function hide()    
+        {
+            document.getElementById('admin-credential').style.visibility='hidden'
+            document.getElementById('main-container').style.zIndex='1'
+
+        }   
+        function validation(){
+            
+            let personalDetails=document.getElementsByTagName('input')
+            let option=document.getElementById('option')
+            if(!personalDetails[0].value  || !personalDetails[1].value  || !personalDetails[2].value  || !personalDetails[3].value 
+             || !personalDetails[4].value  || !personalDetails[5].value  || !personalDetails[6].value ){
+                document.getElementById('error').innerHTML="All field must be filed" 
+                return;
+            }
+            else if(option.value == 'select')
+            {
+                document.getElementById('option-error').innerHTML='select option'  
+                return;
+            }
+            let url='http://localhost:8000/Teacher-Portal/save-information?email-id='+personalDetails[0].value+'&name='+personalDetails[1].value+'&last-name='+personalDetails[2].value
+            +'&phone-no='+personalDetails[3].value+'&DOB='+personalDetails[4].value+'&gender='+option.value+'&state='+personalDetails[5].value+'&area='+personalDetails[6].value+'&address='+personalDetails[7].value
+            let request=new XMLHttpRequest()
+            request.open('GET',url,true)
+            request.send()
+            request.onreadystatechange=function(){
+                if(request.readyState == 4 && request.status == 200){
+                    let response=document.getElementById('error')
+                    response.innerHTML=request.responseText
+                    response.style.color='green'
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="Admin-header-container" >
+        <div id="admin-header">
+           <h1>Welcome, {{ details.real_name }}</h1>
+       </div>
+        <div id="admin-icon" onmouseover="show()" onmouseleave="hide()">
+            <i class="fa-solid fa-angle-down" style="font-size:20px"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+       <div  id="admin-credential" onmouseover="show()" onmouseleave="hide()">
+
+            <div id="admin-profile" class="admin-details">
+                <i class="fa-solid fa-address-card user"></i>
+                <a href="http://localhost:8000/Teacher-Portal/teacher-profile/">profile</a>
+            </div>
+            <hr>
+            <div id="admin-details" class="admin-details" >
+                <i class="fa-solid fa-id-card"></i>
+                <a href="http://localhost:8000/Teacher-Portal/teacher-information/">details</a>
+            </div>
+            <hr>
+            <div id="Admin-logout" class="admin-details" >
+                <i class="fa-solid fa-right-from-bracket user" ></i>
+                <a href="http://localhost:8000/Teacher-Portal/logout">logout</a>
+            </div>
+        </div>
+    </section>
+    <section id="main-container">
+        <div id="information-container">
+            <div id="header-container">
+                <span>Personal details</span>
+            </div>
+            <div id="input-boxs">
+                <div id="email"> 
+                    <p>Email id</p> 
+                    <input type="email" value="{{ details.emailId }}" readonly>
+                </div>
+                <div id="name">
+                    <p>name</p>
+                    <input type="text" value="{{ details.real_name }}" readonly>
+                </div>
+                <div id="last-name"> 
+                    <p>last name</p>
+                    <input type="text"  value="{{ details.lastName }}">
+                </div>
+                <div id="phone-no">
+                    <p>phone no</p>
+                    <input type="number" value="{{ details.phone_no }}"> 
+                </div>
+                <div id="DOB">
+                    <p>DOB</p>
+                    <input type="text" value="{{ details.DOB }}">
+                </div>
+                <div id="gender">
+                    <p>gender</p>
+                    <select id="option">
+                        <option value="select">select gender</option>
+                        <option value="MALE" {% if details.gender == 'MALE' %} selected {% endif %}>MALE</option>
+                        <option value="FEMALE" {% if details.gender == 'FEMALE' %} selected {% endif %}>FEMALE</option>
+                        <option value="OHTER" {% if details.gender == 'OTHER' %} selected {% endif %}>OTHER</option>
+                    </select>
+                    <span id="option-error" style="color:red"></span>
+                </div>
+                <div id="state"> 
+                    <p>State</p>
+                    <input type="text" value="{{ details.state }}">
+                </div>
+                <div id="area">
+                    <p>Area</p>
+                    <input type="text" value="{{ details.area }}"> 
+                </div>
+                <div id="address">
+                    <p>Address</p>
+                    <input type="text" value="{{ details.address }}">
+                </div>
+            </div>
+            <div id="submit-button">
+               <button onclick="validation()">save</button>
+               <span id="error"></span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

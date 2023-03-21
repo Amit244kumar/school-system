@@ -1,0 +1,30 @@
+
+<div id="sign-up-page">
+    <form action="http://localhost:8000/Teacher-Portal/sign-up/" method="post" onsubmit="return checkUsername()">
+        {% csrf_token %}
+        <div id="heading">
+            <i class="fa-solid fa-xmark" id="cross-icon" onclick="toggleSignUp()"></i>
+            <h1 >sign up</h1>
+            <i class="fa-solid fa-check icon" id="right-icon"></i>
+            <i class="fa-solid fa-triangle-exclamation icon" id="exclamation-icon"></i>
+        </div>
+        <div id="sign-up-crediantial">
+            <div class="user-detail">
+                <input class="input-field" type="email" oninput="checkEmailId()" autocomplete="off" name="email-Id" required placeholder="Email id" id="email-id">
+              <span id="not-register-email-id"></span>
+            </div>
+            
+            <div class="user-detail">
+                <input class="input-field" type="text" name="real-name" id="real-name" placeholder="real name" required>
+            </div>
+            <div  class="user-detail">
+               <input class="input-field" type="text" name="user-name" id="user-name" oninput="checkUserName()" required placeholder="username" autocomplete="off">
+               <span id="not-unique-username"></span>
+            </div>
+            <div class="user-detail">
+                <input class="input-field" type="password" name="password" id="password" required autocomplete="off" placeholder="password">
+            </div>
+            <input type="submit" value="sign up" class="submit-button" id="button">
+        </div>
+    </form>
+</div>

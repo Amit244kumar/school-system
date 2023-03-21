@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TeacherPortal/css/admin.css'%}">
+    <script src="https://kit.fontawesome.com/64edd0846d.js" crossorigin="anonymous"></script>
+    <script src="{% static 'TeacherPortal/js/admin.js'%}"></script>
+    <title>admin account</title>
+
+    
+</head>
+<body>
+   <script>
+    function openTab()
+    {
+        content=document.getElementById('closed-tab')
+        content.removeAttribute('id')
+        Arrow=document.getElementsByClassName("arrow")
+        Arrow[0].style.visibility='visible';
+        Arrow[1].style.visibility='hidden'
+        
+    }
+    function closedTab()
+    {
+        content=document.getElementsByClassName('email-id-permission')
+        content[0].setAttribute('id','closed-tab')
+        Arrow=document.getElementsByClassName("arrow")
+        Arrow[0].style.visibility='hidden';
+        Arrow[1].style.visibility='visible';
+    }
+   
+   </script>
+    <section id="Admin-header-container">
+        <div id="admin-header">
+           <h1>Welcome, Admin</h1>
+       </div>
+        <div id="admin-icon" onmouseover="show()" onmouseleave="hide()">
+            <i class="fa-solid fa-angle-down" style="font-size:20px"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+       <div  id="admin-credential" onmouseover="show()" onmouseleave="hide()">
+            <div id="admin-profile" class="admin-details">
+                <i class="fa-solid fa-address-card user"></i>
+                <a href="http://localhost:8000/Teacher-Portal/admin-profile/">profile</a>
+            </div>
+            <hr>
+            <div id="Admin-logout" class="admin-details">
+                <i class="fa-solid fa-right-from-bracket user" ></i>
+                <a href="http://localhost:8000/Teacher-Portal/logout">logout</a>
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="left-side-container" >
+        <div id="search-student">
+            <input type="text" name="search" placeholder="search student or teacher" autocomplete="off" id="search-input">
+            <span id="ji-rowor433"></span>
+            <button onclick="search()">search</button>
+        </div>
+       <div class="email-id-permission" id="closed-tab">
+            <i class="fa-solid fa-angle-down arrow " style="position:relative; left:129px; visibility:hidden" onclick="closedTab()"></i>
+            <i class="fa-solid fa-angle-up arrow "  onclick="openTab()"></i>
+            <h1 >Enter email id to give permission</h1>
+            <input type="email" name="email-id" oninput="Emailvalidation()" id="email-id-for-permission" placeholder="enter email" class="hide">
+            <input type="submit" value="submit" onclick="register_Email_Id()" id="submit-button" class="hide">
+            <span id="server-response" class="hide"></span>
+        </div>
+    </section>
+    <section id="data-container">
+              <div id="cross-icon">
+                   <i class="fa-solid fa-xmark" onclick="closed()"></i>
+              </div>
+              <div id="data-header">
+                <p id="jefh-4hf"></p>
+              </div>
+              <div id="ghdge4-45dft">
+                  
+              </div>
+    </section>
+</body>
+</html>
